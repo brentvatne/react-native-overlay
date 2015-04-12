@@ -83,3 +83,7 @@ This would produce something like this:
 
 You can try this code yourself by cloning this repo and running
 `Examples/LoaingOverlay`.
+
+## TODO
+- [ ] Add prop to specify whether the overlay should be above or below
+  status bar
