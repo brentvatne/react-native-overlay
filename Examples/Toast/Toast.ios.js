@@ -1,5 +1,5 @@
 /**
- * @providesModule LoadingOverlay
+ * @providesModule Toast
  * @flow
  */
 
@@ -11,13 +11,14 @@ var {
   View,
   ActivityIndicatorIOS,
   StyleSheet,
+  TouchableOpacity,
 } = React;
 
 type Props = {
   isVisible: boolean;
 }
 
-var LoadingOverlay = React.createClass({
+var Toast = React.createClass({
   getDefaultProps(): Props {
     return {
       isVisible: false
@@ -28,10 +29,7 @@ var LoadingOverlay = React.createClass({
     return (
       <Overlay isVisible={this.props.isVisible}>
         <BlurView style={styles.background} blurType="dark">
-          <ActivityIndicatorIOS
-            size="large"
-            animating={true}
-            style={styles.spinner} />
+          {this.props.children}
         </BlurView>
       </Overlay>
     );
@@ -40,9 +38,12 @@ var LoadingOverlay = React.createClass({
 
 var styles = StyleSheet.create({
   background: {
-    flex: 1,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
     justifyContent: 'center',
   },
 })
 
-module.exports = LoadingOverlay;
+module.exports = Toast;

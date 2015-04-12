@@ -1,5 +1,6 @@
 node_modules/**/*
 Examples/LoadingOverlay/node_modules/**/*
+Examples/Toast/node_modules/**/*
 
 build/
 *.pbxuser

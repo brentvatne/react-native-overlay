@@ -1,0 +1,13 @@
+{
+  "name": "LoadingOverlay",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh"
+  },
+  "dependencies": {
+    "react-native": "^0.3.11",
+    "react-native-blur": "^0.3.2",
+    "react-native-overlay": "^0.1.0"
+  }
+}
