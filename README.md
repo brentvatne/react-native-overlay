@@ -92,8 +92,3 @@ simple example to stir your imagination.
 ![Example code result](https://raw.githubusercontent.com/brentvatne/react-native-overlay/master/example-toast.png)
 
 Check it out in `Examples/Toast`.
-
-
-## TODO
-- [ ] Add prop to specify whether the overlay should be above or below
-  status bar
