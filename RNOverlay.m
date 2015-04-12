@@ -3,9 +3,10 @@
 #import "RCTView.h"
 #import "RCTTouchHandler.h"
 #import "UIView+React.h"
+#import "RNClickThroughWindow.h"
 
 @implementation RNOverlay {
-  UIWindow *_overlayWindow;
+  RNClickThroughWindow *_overlayWindow;
   UIViewController *_overlayViewController;
   RCTView *_overlayBaseView;
   RCTTouchHandler *_touchHandler;
@@ -33,7 +34,7 @@
  * this prop that is always true in order to not create UIWindow for the default props
  * instance */
 - (void)setVisible:(BOOL)visible {
-  _overlayWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  _overlayWindow = [[RNClickThroughWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   _overlayWindow.backgroundColor = [UIColor clearColor];
   _overlayWindow.windowLevel = UIWindowLevelStatusBar;
   _overlayWindow.rootViewController = _overlayViewController;

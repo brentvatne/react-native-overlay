@@ -16,9 +16,15 @@ var {
   StyleSheet,
 } = React;
 
+type Props = {
+  isVisible: boolean;
+}
+
 var Overlay = React.createClass({
-  propTypes: {
-    isVisible: PropTypes.bool,
+  getDefaultProps(): Props {
+    return {
+      isVisible: false,
+    }
   },
 
   render() {
@@ -28,7 +34,7 @@ var Overlay = React.createClass({
 
     if (this.props.isVisible) {
       return (
-        <RNOverlay visible={true} style={styles.container}>
+        <RNOverlay visible={true}>
           {React.Children.map(this.props.children, React.addons.cloneWithProps)}
         </RNOverlay>
       );
@@ -37,18 +43,6 @@ var Overlay = React.createClass({
     }
   },
 });
-
-var styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: 'transparent',
-    justifyContent: 'center',
-  },
-})
 
 var RNOverlay = createReactIOSNativeComponentClass({
   validAttributes: merge(ReactIOSViewAttributes.UIView, {visible: true}),

@@ -18,6 +18,7 @@
 
 # Ignore jest
 .*/node_modules/jest-cli/.*
+.*/Examples/.*
 
 [include]
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB328AE31ADACB71003E68BD /* RNClickThroughWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BB328AE21ADACB71003E68BD /* RNClickThroughWindow.m */; };
 		BBD49E3F1AC8DEF000610F8E /* RNOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD49E3A1AC8DEF000610F8E /* RNOverlay.m */; };
 		BBD49E401AC8DEF000610F8E /* RNOverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD49E3C1AC8DEF000610F8E /* RNOverlayManager.m */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNOverlay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNOverlay.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB328AE11ADACB71003E68BD /* RNClickThroughWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNClickThroughWindow.h; sourceTree = "<group>"; };
+		BB328AE21ADACB71003E68BD /* RNClickThroughWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNClickThroughWindow.m; sourceTree = "<group>"; };
 		BBD49E391AC8DEF000610F8E /* RNOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNOverlay.h; sourceTree = "<group>"; };
 		BBD49E3A1AC8DEF000610F8E /* RNOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOverlay.m; sourceTree = "<group>"; };
 		BBD49E3B1AC8DEF000610F8E /* RNOverlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNOverlayManager.h; sourceTree = "<group>"; };
@@ -53,6 +56,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				BB328AE11ADACB71003E68BD /* RNClickThroughWindow.h */,
+				BB328AE21ADACB71003E68BD /* RNClickThroughWindow.m */,
 				BBD49E391AC8DEF000610F8E /* RNOverlay.h */,
 				BBD49E3A1AC8DEF000610F8E /* RNOverlay.m */,
 				BBD49E3B1AC8DEF000610F8E /* RNOverlayManager.h */,
@@ -117,6 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB328AE31ADACB71003E68BD /* RNClickThroughWindow.m in Sources */,
 				BBD49E3F1AC8DEF000610F8E /* RNOverlay.m in Sources */,
 				BBD49E401AC8DEF000610F8E /* RNOverlayManager.m in Sources */,
 			);
