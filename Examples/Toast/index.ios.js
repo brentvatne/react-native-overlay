@@ -20,17 +20,22 @@ var Toast = require('./Toast.ios');
 
 var ToastExampleApp = React.createClass({
   getInitialState(): any {
-    return {isToastVisible: true};
+    return {isTopToastVisible: true, isBottomToastVisible: true};
   },
 
-  hideToast() {
-    this.setState({isToastVisible: false});
+  hideTopToast() {
+    this.setState({isTopToastVisible: false});
   },
+
+  hideBottomToast() {
+    this.setState({isBottomToastVisible: false});
+  },
+
   render() {
     return (
       <View style={styles.container}>
         { /* It doesn't matter where we put this component */ }
-        <Toast isVisible={this.state.isToastVisible} onDismiss={this.hideToast} position="bottom">
+        <Toast isVisible={this.state.isBottomToastVisible} onDismiss={this.hideBottomToast} position="bottom">
           <TouchableOpacity onPress={() => { AlertIOS.alert('Pressed on text!') }}>
             <Text style={styles.toastText}>This message is easy to display and dismiss! Write as much as you want to, also! It will just flow down.</Text>
           </TouchableOpacity>
@@ -41,7 +46,7 @@ var ToastExampleApp = React.createClass({
         </TouchableOpacity>
 
         { /* It doesn't matter where we put this component */ }
-        <Toast isVisible={this.state.isToastVisible} onDismiss={this.hideToast} position="top">
+        <Toast isVisible={this.state.isTopToastVisible} onDismiss={this.hideTopToast} position="top">
           <TouchableOpacity onPress={() => { AlertIOS.alert('Pressed on text!') }}>
             <Text style={styles.toastText}>This message is easy to display and dismiss! Write as much as you want to, also! It will just flow down.</Text>
           </TouchableOpacity>
