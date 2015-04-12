@@ -56,6 +56,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     height: 30,
     marginRight: 15,
+    alignItems: 'center',
   },
   dismissButtonText: {
     color: '#888888',

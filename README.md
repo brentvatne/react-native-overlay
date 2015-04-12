@@ -11,7 +11,7 @@ An <Overlay /> component that brings content inside to the front of the view reg
    [(Screenshot)](http://url.brentvatne.ca/g9Wp).
 4. Whenever you want to use it within React code now you can: `var Overlay = require('react-native-overlay');`
 
-## Example
+## Example - Loading Overlay
 
 This shows how you might implement a loading overlay and uses
 [react-native-blur](http://github.com/kureev/react-native-blur) to blur
@@ -83,6 +83,16 @@ This would produce something like this:
 
 You can try this code yourself by cloning this repo and running
 `Examples/LoaingOverlay`.
+
+## Example - Toast
+
+There are so many other types of overlays but I thought I'd give another
+simple example to stir your imagination.
+
+![Example code result](https://raw.githubusercontent.com/brentvatne/react-native-overlay/master/example-toast.png)
+
+Check it out in `Examples/Toast`.
+
 
 ## TODO
 - [ ] Add prop to specify whether the overlay should be above or below

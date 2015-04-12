@@ -56,8 +56,8 @@ var styles = StyleSheet.create({
   },
   image: {
     resizeMode: 'cover',
-    height: require('Dimensions').get('window').height,
-    width: require('Dimensions').get('window').width,
+    width: 800,
+    height: 800,
   }
 });
 
