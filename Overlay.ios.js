@@ -34,7 +34,7 @@ var Overlay = React.createClass({
 
     if (this.props.isVisible) {
       return (
-        <RNOverlay visible={true} style={styles.container} pointerEvents="none">
+        <RNOverlay visible={true} style={styles.container} pointerEvents="none" aboveStatusBar={this.props.aboveStatusBar}>
           {React.Children.map(this.props.children, React.addons.cloneWithProps)}
         </RNOverlay>
       );
@@ -45,7 +45,7 @@ var Overlay = React.createClass({
 });
 
 var RNOverlay = createReactIOSNativeComponentClass({
-  validAttributes: merge(ReactIOSViewAttributes.UIView, {visible: true}),
+  validAttributes: merge(ReactIOSViewAttributes.UIView, {visible: true, aboveStatusBar: true}),
   uiViewClassName: 'RNOverlay',
 });
 

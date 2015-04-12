@@ -10,6 +10,7 @@
   UIViewController *_overlayViewController;
   RCTView *_overlayBaseView;
   RCTTouchHandler *_touchHandler;
+  BOOL _aboveStatusBar;
 }
 
 - (id)initWithBridge:(RCTBridge *)bridge
@@ -29,14 +30,31 @@
   return self;
 }
 
+- (void)setAboveStatusBar:(BOOL)aboveStatusBar {
+  _aboveStatusBar = aboveStatusBar;
+  [self applyWindowLevel];
+}
+
+- (void)applyWindowLevel {
+  if (_overlayWindow == nil) {
+    return;
+  }
+
+  if (_aboveStatusBar) {
+    _overlayWindow.windowLevel = UIWindowLevelStatusBar;
+  } else {
+    _overlayWindow.windowLevel = UIWindowLevelStatusBar - 1;
+  }
+}
+
 /* Every component has it is initializer called twice, once to create a base view
  * with default props and another to actually create it and apply the props. We make
  * this prop that is always true in order to not create UIWindow for the default props
  * instance */
 - (void)setVisible:(BOOL)visible {
   _overlayWindow = [[RNClickThroughWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  [self applyWindowLevel];
   _overlayWindow.backgroundColor = [UIColor clearColor];
-  _overlayWindow.windowLevel = UIWindowLevelStatusBar;
   _overlayWindow.rootViewController = _overlayViewController;
   _overlayWindow.userInteractionEnabled = YES;
   _overlayWindow.hidden = NO;

@@ -21,9 +21,17 @@ type Props = {
 
 var Toast = React.createClass({
   render(): ReactElement {
+    var positionStyle;
+
+    if (this.props.position == 'top' || !this.props.position) {
+      positionStyle = styles.top;
+    } else {
+      positionStyle = styles.bottom;
+    }
+
     return (
-      <Overlay isVisible={this.props.isVisible}>
-        <BlurView style={styles.background} blurType="light">
+      <Overlay isVisible={this.props.isVisible} aboveStatusBar={false}>
+        <BlurView style={positionStyle} blurType="light">
           <View style={styles.content}>
             {this.props.children}
           </View>
@@ -40,8 +48,18 @@ var Toast = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  background: {
+  top: {
+    paddingTop: 15,
     flexDirection: 'row',
+    alignItems: 'center',
+  },
+  bottom: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   content: {
     flex: 9,
@@ -52,7 +70,6 @@ var styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     borderRadius: 5,
-    marginTop: 15,
     justifyContent: 'center',
     height: 30,
     marginRight: 15,
