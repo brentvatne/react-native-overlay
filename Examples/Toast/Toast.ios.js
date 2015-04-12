@@ -12,6 +12,7 @@ var {
   ActivityIndicatorIOS,
   StyleSheet,
   TouchableOpacity,
+  Text,
 } = React;
 
 type Props = {
@@ -19,17 +20,19 @@ type Props = {
 }
 
 var Toast = React.createClass({
-  getDefaultProps(): Props {
-    return {
-      isVisible: false
-    }
-  },
-
   render(): ReactElement {
     return (
       <Overlay isVisible={this.props.isVisible}>
-        <BlurView style={styles.background} blurType="dark">
-          {this.props.children}
+        <BlurView style={styles.background} blurType="light">
+          <View style={styles.content}>
+            {this.props.children}
+          </View>
+
+          <TouchableOpacity onPress={this.props.onDismiss}>
+            <View style={styles.dismissButton}>
+              <Text style={styles.dismissButtonText}>Okay</Text>
+            </View>
+          </TouchableOpacity>
         </BlurView>
       </Overlay>
     );
@@ -38,11 +41,25 @@ var Toast = React.createClass({
 
 var styles = StyleSheet.create({
   background: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
+    flexDirection: 'row',
+  },
+  content: {
+    flex: 9,
+  },
+  dismissButton: {
+    flex: 1,
+    backgroundColor: '#eeeeee',
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderRadius: 5,
+    marginTop: 15,
     justifyContent: 'center',
+    height: 30,
+    marginRight: 15,
+  },
+  dismissButtonText: {
+    color: '#888888',
+    fontSize: 12,
   },
 })
 
