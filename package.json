@@ -1,11 +1,11 @@
 {
   "name": "react-native-overlay",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "An <Overlay /> component that brings content inside to the front of the view regardless of its current position in the component tree.",
   "main": "Overlay.ios.js",
   "author": "Brent Vatne <brentvatne@gmail.com> (https://github.com/brentvatne)",
   "dependencies": {
-    "react-native": "^0.3.11"
+    "react-native": "^0.4.0"
   },
   "repository": {
     "type": "git",

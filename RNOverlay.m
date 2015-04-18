@@ -78,7 +78,6 @@
 - (void)removeFromSuperview
 {
   [_overlayBaseView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-  [_touchHandler invalidate];
   _touchHandler = nil;
   _overlayViewController = nil;
   _overlayBaseView = nil;
