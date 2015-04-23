@@ -6,9 +6,9 @@ An <Overlay /> component that brings content inside to the front of the view reg
 
 1. Run `npm install react-native-overlay --save`
 2. Open your project in XCode, right click on `Libraries` and click `Add
-   Files to "Your Project Name"` [(Screenshot)](http://url.brentvatne.ca/g9Wp).
+   Files to "Your Project Name"` [(Screenshot)](http://url.brentvatne.ca/jQp8) then [(Screenshot)](http://url.brentvatne.ca/1gqUD).
 3. Add `libRNOverlay.a` to `Build Phases -> Link Binary With Libraries`
-   [(Screenshot)](http://url.brentvatne.ca/g9Wp).
+   [(Screenshot)](http://url.brentvatne.ca/17Xfe).
 4. Whenever you want to use it within React code now you can: `var Overlay = require('react-native-overlay');`
 
 ## Example - Loading Overlay
