@@ -5,8 +5,8 @@
 
 'use strict';
 
-var createReactIOSNativeComponentClass = require('createReactIOSNativeComponentClass');
-var ReactIOSViewAttributes = require('ReactIOSViewAttributes');
+var createReactNativeComponentClass = require('createReactNativeComponentClass');
+var ReactNativeViewAttributes = require('ReactNativeViewAttributes');
 var merge = require('merge');
 
 var React = require('react-native');
@@ -44,8 +44,8 @@ var Overlay = React.createClass({
   },
 });
 
-var RNOverlay = createReactIOSNativeComponentClass({
-  validAttributes: merge(ReactIOSViewAttributes.UIView, {visible: true, aboveStatusBar: true}),
+var RNOverlay = createReactNativeComponentClass({
+  validAttributes: merge(ReactNativeViewAttributes.UIView, {visible: true, aboveStatusBar: true}),
   uiViewClassName: 'RNOverlay',
 });
 
