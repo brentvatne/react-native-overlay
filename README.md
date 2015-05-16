@@ -1,6 +1,6 @@
 ## react-native-overlay
 
-An <Overlay /> component that brings content inside to the front of the view regardless of its current position in the component tree. This was extracted from [react-native-modal](https://github.com/brentvatne/react-native-modal) because a modal is not the only time that you want to bring something to the front of the screen.
+An `<Overlay />` component that brings content inside to the front of the view regardless of its current position in the component tree. This was extracted from [react-native-modal](https://github.com/brentvatne/react-native-modal) because a modal is not the only time that you want to bring something to the front of the screen.
 
 ### Add it to your project
 
