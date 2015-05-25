@@ -13,6 +13,21 @@
   BOOL _aboveStatusBar;
 }
 
+// Taken from react-native/React/Modules/RCTUIManager.m
+// Since our view is not registered as a root view we have to manually
+// iterate through the overlay's subviews and forward the `reactBridgeDidFinishTransaction` message
+// If the function below would be a utility function we could just import, it would make
+// things less dirty - maybe ask the react-native guys nicely?
+typedef void (^react_view_node_block_t)(id<RCTViewNodeProtocol>);
+
+static void RCTTraverseViewNodes(id<RCTViewNodeProtocol> view, react_view_node_block_t block)
+{
+  if (view.reactTag) block(view);
+  for (id<RCTViewNodeProtocol> subview in view.reactSubviews) {
+    RCTTraverseViewNodes(subview, block);
+  }
+}
+
 - (id)initWithBridge:(RCTBridge *)bridge
 {
   if ((self = [super init])) {
@@ -65,6 +80,16 @@
                                            selector:@selector(removeFromSuperview)
                                                name:@"RCTReloadNotification"
                                              object:nil];
+}
+
+- (void) reactBridgeDidFinishTransaction {
+  // forward the `reactBridgeDidFinishTransaction` message to all our subviews
+  // in case their native representations do some logic in their handler
+  RCTTraverseViewNodes(_overlayBaseView, ^(id<RCTViewNodeProtocol> view) {
+    if ([view respondsToSelector:@selector(reactBridgeDidFinishTransaction)]) {
+      [view reactBridgeDidFinishTransaction];
+    }
+  });
 }
 
 - (void)insertReactSubview:(UIView *)view atIndex:(NSInteger)atIndex
