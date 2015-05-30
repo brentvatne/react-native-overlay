@@ -13,7 +13,7 @@ RCT_EXPORT_MODULE();
   return [[RNOverlay alloc] initWithBridge:_bridge];
 }
 
-RCT_EXPORT_VIEW_PROPERTY(visible, BOOL);
+RCT_EXPORT_VIEW_PROPERTY(isVisible, BOOL);
 RCT_EXPORT_VIEW_PROPERTY(aboveStatusBar, BOOL);
 
 @end

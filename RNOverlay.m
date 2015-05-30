@@ -66,7 +66,7 @@ static void RCTTraverseViewNodes(id<RCTViewNodeProtocol> view, react_view_node_b
  * with default props and another to actually create it and apply the props. We make
  * this prop that is always true in order to not create UIWindow for the default props
  * instance */
-- (void)setVisible:(BOOL)visible {
+- (void)setIsVisible:(BOOL)isVisible {
   _overlayWindow = [[RNClickThroughWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [self applyWindowLevel];
   _overlayWindow.backgroundColor = [UIColor clearColor];
