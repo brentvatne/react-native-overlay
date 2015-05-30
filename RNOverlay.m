@@ -82,7 +82,7 @@ static void RCTTraverseViewNodes(id<RCTViewNodeProtocol> view, react_view_node_b
                                              object:nil];
 }
 
-- (void) reactBridgeDidFinishTransaction {
+- (void)reactBridgeDidFinishTransaction {
   // forward the `reactBridgeDidFinishTransaction` message to all our subviews
   // in case their native representations do some logic in their handler
   RCTTraverseViewNodes(_overlayBaseView, ^(id<RCTViewNodeProtocol> view) {

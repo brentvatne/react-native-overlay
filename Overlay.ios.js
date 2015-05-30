@@ -5,15 +5,12 @@
 
 'use strict';
 
-var createReactNativeComponentClass = require('createReactNativeComponentClass');
-var ReactNativeViewAttributes = require('ReactNativeViewAttributes');
-var merge = require('merge');
-
 var React = require('react-native');
 var {
   View,
   PropTypes,
   StyleSheet,
+  requireNativeComponent,
 } = React;
 
 type Props = {
@@ -21,8 +18,23 @@ type Props = {
 }
 
 var Overlay = React.createClass({
+  propTypes: {
+    /**
+     * When this property is set to `true`, the Overlay will appear on
+     * `UIWindowLevelStatusBar`, otherwise it will appear below that.
+     */
+    aboveStatusBar: React.PropTypes.bool,
+
+    /**
+     * Determines the visibility of the Overlay. When it is not visible,
+     * an empty View is rendered.
+     */
+    isVisible: React.PropTypes.bool,
+  },
+
   getDefaultProps(): Props {
     return {
+      aboveStatusBar: false,
       isVisible: false,
     }
   },
@@ -44,10 +56,7 @@ var Overlay = React.createClass({
   },
 });
 
-var RNOverlay = createReactNativeComponentClass({
-  validAttributes: merge(ReactNativeViewAttributes.UIView, {visible: true, aboveStatusBar: true}),
-  uiViewClassName: 'RNOverlay',
-});
+var RNOverlay = requireNativeComponent('RNOverlay', Overlay);
 
 var styles = StyleSheet.create({
   container: {
