@@ -46,7 +46,7 @@ var Overlay = React.createClass({
 
     if (this.props.isVisible) {
       return (
-        <RNOverlay visible={true} style={styles.container} pointerEvents="none" aboveStatusBar={this.props.aboveStatusBar}>
+        <RNOverlay isVisible={true} style={styles.container} pointerEvents="none" aboveStatusBar={this.props.aboveStatusBar}>
           {React.Children.map(this.props.children, React.addons.cloneWithProps)}
         </RNOverlay>
       );
