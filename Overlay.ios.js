@@ -1,6 +1,6 @@
 /**
  * @providesModule Overlay
- * @flow
+ * @flow-weak
  */
 
 'use strict';
