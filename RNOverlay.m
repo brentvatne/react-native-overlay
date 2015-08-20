@@ -18,12 +18,12 @@
 // iterate through the overlay's subviews and forward the `reactBridgeDidFinishTransaction` message
 // If the function below would be a utility function we could just import, it would make
 // things less dirty - maybe ask the react-native guys nicely?
-typedef void (^react_view_node_block_t)(id<RCTViewNodeProtocol>);
+typedef void (^react_view_node_block_t)(id<RCTComponent>);
 
-static void RCTTraverseViewNodes(id<RCTViewNodeProtocol> view, react_view_node_block_t block)
+static void RCTTraverseViewNodes(id<RCTComponent> view, react_view_node_block_t block)
 {
   if (view.reactTag) block(view);
-  for (id<RCTViewNodeProtocol> subview in view.reactSubviews) {
+  for (id<RCTComponent> subview in view.reactSubviews) {
     RCTTraverseViewNodes(subview, block);
   }
 }
@@ -85,7 +85,7 @@ static void RCTTraverseViewNodes(id<RCTViewNodeProtocol> view, react_view_node_b
 - (void)reactBridgeDidFinishTransaction {
   // forward the `reactBridgeDidFinishTransaction` message to all our subviews
   // in case their native representations do some logic in their handler
-  RCTTraverseViewNodes(_overlayBaseView, ^(id<RCTViewNodeProtocol> view) {
+  RCTTraverseViewNodes(_overlayBaseView, ^(id<RCTComponent> view) {
     if ([view respondsToSelector:@selector(reactBridgeDidFinishTransaction)]) {
       [view reactBridgeDidFinishTransaction];
     }
