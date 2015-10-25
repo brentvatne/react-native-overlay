@@ -82,7 +82,7 @@ This would produce something like this:
 ![Example code result](https://raw.githubusercontent.com/brentvatne/react-native-overlay/master/example.png)
 
 You can try this code yourself by cloning this repo and running
-`Examples/LoaingOverlay`.
+`Examples/LoadingOverlay`.
 
 ## Example - Toast
 
