@@ -13,7 +13,8 @@
     "RNOverlay.h",
     "RNOverlay.m",
     "RNOverlayManager.h",
-    "RNOverlayManager.m"
+    "RNOverlayManager.m",
+    "react-native-overlay.podspec"
   ],
   "repository": {
     "type": "git",
