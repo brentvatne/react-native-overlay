@@ -15,9 +15,6 @@
     "RNOverlayManager.h",
     "RNOverlayManager.m"
   ],
-  "peerDependencies": {
-    "react-native": ">=0.13.0 || 0.13.0-rc"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:brentvatne/react-native-overlay.git"
