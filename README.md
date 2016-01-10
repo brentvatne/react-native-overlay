@@ -2,6 +2,10 @@
 
 An `<Overlay />` component that brings content inside to the front of the view regardless of its current position in the component tree. This was extracted from [react-native-modal](https://github.com/brentvatne/react-native-modal) because a modal is not the only time that you want to bring something to the front of the screen.
 
+### Should you use this?
+
+Ideally, no. This should probably only be used as a last resort. You can usually accomplish what you need to by just absolute positioning an view at the bottom of your root component.
+
 ### Add it to your project
 
 1. Run `npm install react-native-overlay --save`
