@@ -5,13 +5,8 @@
 
 'use strict';
 
-var React = require('react-native');
-var {
-  View,
-  PropTypes,
-  StyleSheet,
-  requireNativeComponent,
-} = React;
+import React, { PropTypes } from 'react';
+import { View, StyleSheet, requireNativeComponent } from 'react-native';
 
 type Props = {
   isVisible: boolean;
