@@ -6,6 +6,8 @@ An `<Overlay />` component that brings content inside to the front of the view r
 
 Ideally, no. This should probably only be used as a last resort. You can usually accomplish what you need to by just absolute positioning an view at the bottom of your root component.
 
+*In fact, as of 0.29.0 zIndex is supported on iOS and Android, so you should probably never use this.*
+
 ### Add it to your project
 
 1. Run `npm install react-native-overlay --save`
